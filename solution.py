@@ -22,7 +22,7 @@ def webServer(port=13331):
             outputdata = f.read()
 
             #Send one HTTP header line into socket
-            connectionSocket.send('HTTP/1.0 200 OK\r\n'.encode())
+            connectionSocket.sendall('HTTP/1.0 200 OK\r\n'.encode())
             
             #Send the content of the requested file to the client
             for i in range(0, len(outputdata)):
